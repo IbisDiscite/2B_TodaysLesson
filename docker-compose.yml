@@ -1,0 +1,14 @@
+version: '2'
+services:
+  todayslesson:
+    build: ./todayslessons
+    image: nicolaszon/2b_todayslesson
+    container_name: todayslesson-ms
+#    depends_on:
+#      - db
+#    links:
+#      - db
+#    environment:
+#      VIRTUAL_HOST: todayslesson.local
+    ports:
+      - "4002:4002"
