@@ -7,15 +7,15 @@ FROM golang
 RUN go get github.com/gorilla/mux
 
 # Copy the local package files to the container's workspace.
-ADD . /go/src/github.com/nicolaszon/2b_todayslesson/todayslessons
+ADD . /go/src/github.com/nicolaszon/2b_todayslesson/todayslesson
 
 # Build the outyet command inside the container.
 # (You may fetch or manage dependencies here,
 
-WORKDIR /go/src/github.com/nicolaszon/2b_todayslesson/todayslessons
+WORKDIR /go/src/github.com/nicolaszon/2b_todayslesson/todayslesson
 
 # either manually or with a tool like "godep".)
-RUN go install github.com/nicolaszon/2b_todayslesson/todayslessons
+RUN go install github.com/nicolaszon/2b_todayslesson/todayslesson
 
 # Run the outyet command by default when the container starts.
 ENTRYPOINT /go/bin/todayslesson
