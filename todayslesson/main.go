@@ -68,9 +68,9 @@ func DeleteTodayslesson(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := mux.NewRouter()
 
-	todayslessons = append(todayslessons, Todayslesson{ID: "1", Name: "Colors", Description: "Verde agache y me lo muerde"})
-	todayslessons = append(todayslessons, Todayslesson{ID: "2", Name: "Clothes", Description: "T-shirt = camiseta"})
-	todayslessons = append(todayslessons, Todayslesson{ID: "3", Name: "Chupelo", Description: "Papu lo chupa"})
+	todayslessons = append(todayslessons, Todayslesson{ID: "1", Name: "A blessing in disguise", Description: "a good thing that seemed bad at first"})
+	todayslessons = append(todayslessons, Todayslesson{ID: "2", Name: "A dime a dozen", Description: "Something common"})
+	todayslessons = append(todayslessons, Todayslesson{ID: "3", Name: "Beat around the bush", Description: "Avoid saying what you mean, usually because it is uncomfortable"})
 
 	router.HandleFunc("/todayslessons", GetTodayslessons).Methods("GET")
 	router.HandleFunc("/todayslessons/{id}", GetTodayslesson).Methods("GET")
