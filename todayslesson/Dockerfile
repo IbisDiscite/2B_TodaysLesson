@@ -4,7 +4,7 @@ FROM golang
 
 # Install dependencies
 #RUN go get gopkg.in/mgo.v2
-#RUN go get github.com/gorilla/mux
+RUN go get github.com/gorilla/mux
 
 # Copy the local package files to the container's workspace.
 ADD . /go/src/github.com/nicolaszon/2b_todayslesson/todayslessons
