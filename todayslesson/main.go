@@ -30,7 +30,7 @@ func GetTodayslesson(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode(&Todayslesson{})
 }
-
+/*
 func CreateTodayslesson(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
     var todayslesson Todayslesson
@@ -68,14 +68,15 @@ func DeleteTodayslesson(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := mux.NewRouter()
 
+	//data
 	todayslessons = append(todayslessons, Todayslesson{ID: "1", Name: "A blessing in disguise", Description: "a good thing that seemed bad at first"})
 	todayslessons = append(todayslessons, Todayslesson{ID: "2", Name: "A dime a dozen", Description: "Something common"})
 	todayslessons = append(todayslessons, Todayslesson{ID: "3", Name: "Beat around the bush", Description: "Avoid saying what you mean, usually because it is uncomfortable"})
 
 	router.HandleFunc("/todayslessons", GetTodayslessons).Methods("GET")
 	router.HandleFunc("/todayslessons/{id}", GetTodayslesson).Methods("GET")
-	router.HandleFunc("/todayslessons/{id}", CreateTodayslesson).Methods("POST")
-	router.HandleFunc("/todayslessons/{id}", DeleteTodayslesson).Methods("DELETE")
+	//router.HandleFunc("/todayslessons/{id}", CreateTodayslesson).Methods("POST")
+	//router.HandleFunc("/todayslessons/{id}", DeleteTodayslesson).Methods("DELETE")
 	fmt.Printf("Server Running")
 
 	//log.Fatal(http.ListenAndServe(":4002", router))
