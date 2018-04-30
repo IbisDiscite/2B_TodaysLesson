@@ -61,9 +61,9 @@ func DeleteTodayslesson(w http.ResponseWriter, r *http.Request) {
         }
     }
     return fmt.Errorf("Could not find Todo with id of %d to delete", id)
-    */
+    
 }
-
+*/
 // our main function
 func main() {
 	router := mux.NewRouter()
