@@ -19,12 +19,12 @@ paths:
   /todayslessons:
     get:
       summary: Returns all "today's lessons"
-      operationId: GetTodayslessons
+      operationId: getAllTodayslessons
       responses:
         '200':
           description: Ok
           schema:
-            $ref: '#/definitions/todayslessons'
+            $ref: '#/definitions/todayslessonList'
         '406':
           description: Not Acceptable (Invalid Params)
           schema:
@@ -37,7 +37,7 @@ paths:
   /todayslessons/{id}:
     get:
       summary: Returns a "today's lessons" with the given id
-      operationId: GetTodayslesson
+      operationId: getTodayslessonByIdById
       parameters:
         - name: id
           in: path
@@ -77,7 +77,7 @@ definitions:
         type: string
   
   #this is all   
-  todayslessons:
+  todayslessonList:
     type: object
     required:
       - total
