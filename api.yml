@@ -1,0 +1,105 @@
+#Test with: http://editor.swagger.io/
+
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Microservice for "today's lessons"
+  description: Golang
+  license:
+    name: Software Architecture 2018-I
+host: 192.168.99.101:4002
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /todayslessons:
+    get:
+      summary: Returns all "today's lessons"
+      operationId: GetTodayslessons
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/todayslessons'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+
+  /todayslessons/{id}:
+    get:
+      summary: Returns a "today's lessons" with the given id
+      operationId: GetTodayslesson
+      parameters:
+        - name: id
+          in: path
+          description: The id of the "today's lessons" to be returned
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/todayslesson'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+            description: Not Acceptable (Invalid Params)
+            schema:
+              $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+
+
+definitions:
+
+  #this is by only one by id
+  todayslesson:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      description:
+        type: string
+  
+  #this is all   
+  todayslessons:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/todayslesson'
+
+  # Errors
+  ErrorModel:
+    type: object
+    required:
+      - message
+      - code
+    properties:
+      message:
+        type: string
+      code:
+        type: number
+      description:
+        type: object
