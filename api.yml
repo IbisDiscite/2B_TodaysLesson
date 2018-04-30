@@ -7,7 +7,7 @@ info:
   description: Golang
   license:
     name: Software Architecture 2018-I
-host: 192.168.99.101:4002
+host: 35.185.10.142:4002
 basePath: /
 schemes:
   - http
