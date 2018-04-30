@@ -1,6 +1,6 @@
 version: '2'
 services:
-  todayslesson:
+  todayslesson-ms:
     build: ./todayslesson
     image: nicolaszon/2b_todaylesson
     container_name: todayslesson-ms
