@@ -23,4 +23,4 @@ RUN go install github.com/nicolaszon/2b_todayslesson/todayslesson
 ENTRYPOINT /go/bin/todayslesson
 
 # Document that the service listens on port 4002.
-EXPOSE 4002
+#EXPOSE 4002
