@@ -12,3 +12,5 @@ services:
 #      VIRTUAL_HOST: todayslesson.local
     ports:
       - "4002:4002"
+    environment:
+      PORT: '4002'
