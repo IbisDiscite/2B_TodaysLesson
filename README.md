@@ -7,7 +7,7 @@ docker-compose build
 Starting services
 ==============================
 ```
-docker-compose up -d
+docker-compose up
 ```
 
 Stoping services
