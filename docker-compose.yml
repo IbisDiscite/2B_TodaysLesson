@@ -3,7 +3,7 @@ services:
   todayslesson-ms:
     build: ./todayslesson
     image: nicolaszon/2b_todayslesson
-#    container_name: todayslesson-ms
+    container_name: Ibis
 #    depends_on:
 #      - db
 #    links:
