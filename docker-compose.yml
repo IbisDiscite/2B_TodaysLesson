@@ -2,7 +2,7 @@ version: '2'
 services:
   todayslesson-ms:
     build: .
-    image: nicolaszon/2b_todayslesson
+#    image: nicolaszon/2b_todayslesson
 #    container_name: Ibis
 #    depends_on:
 #      - db
