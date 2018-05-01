@@ -1,4 +1,4 @@
-Building new changes
+Building services
 ==============================
 ```
 docker-compose build
