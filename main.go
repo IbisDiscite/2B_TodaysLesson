@@ -72,7 +72,8 @@ func main() {
 	todayslessons = append(todayslessons, Todayslesson{ID: "1", Name: "A blessing in disguise", Description: "a good thing that seemed bad at first"})
 	todayslessons = append(todayslessons, Todayslesson{ID: "2", Name: "A dime a dozen", Description: "Something common"})
 	todayslessons = append(todayslessons, Todayslesson{ID: "3", Name: "Beat around the bush", Description: "Avoid saying what you mean, usually because it is uncomfortable"})
-
+	
+	router.HandleFunc("/todayslessons", GetTodayslessons).Methods("GET")
 	router.HandleFunc("/todayslessons/", GetTodayslessons).Methods("GET")
 	router.HandleFunc("/todayslessons/{id}", GetTodayslesson).Methods("GET")
 	//router.HandleFunc("/todayslessons/{id}", CreateTodayslesson).Methods("POST")
