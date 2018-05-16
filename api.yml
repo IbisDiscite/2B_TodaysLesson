@@ -75,6 +75,8 @@ definitions:
         type: string
       description:
         type: string
+      unit_id:
+        type: integer
   
   #this is all   
   todayslessonList:
